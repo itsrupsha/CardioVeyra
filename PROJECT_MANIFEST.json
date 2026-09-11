@@ -1,0 +1,9 @@
+{
+  "project_name": "CardioVeyra",
+  "title": "CardioVeyra: An Intelligent Machine Learning Framework for Heart Disease Prediction",
+  "framework": "Django",
+  "final_model": "Random Forest",
+  "model_file": "models/heartrf.joblib",
+  "dataset": "data/heart.csv",
+  "ui": "Professional responsive dark clinical dashboard"
+}

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}CardioVeyra · Patient Assessment{% endblock %}
+{% block content %}
+<section class="assessment-section">
+    <div class="assessment-head">
+        <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> CARDIOVEYRA ASSESSMENT</div>
+            <h1>Patient clinical profile</h1>
+            <p>Enter the values used by the trained Random Forest model. Fields are grouped to make the assessment easier to complete.</p>
+        </div>
+        <div class="model-chip">
+            <span class="chip-dot"></span>
+            <div><small>FINAL MODEL</small><strong>Random Forest</strong></div>
+        </div>
+    </div>
+
+    <div class="progress-line">
+        <span class="progress-fill"></span>
+    </div>
+
+    {% if error %}
+    <div class="form-error">
+        <strong>Input needs attention</strong>
+        <span>{{ error }}</span>
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'predict' %}" class="assessment-form">
+        {% csrf_token %}
+
+        <div class="form-card">
+            <div class="form-card-head">
+                <div class="form-number">01</div>
+                <div><h2>Basic profile</h2><p>Demographic and resting measurements</p></div>
+            </div>
+            <div class="field-group">
+                {% for field in fields %}
+                    {% if field.name == "age" or field.name == "sex" or field.name == "trestbps" or field.name == "chol" %}
+                    <div class="field">
+                        <label for="{{ field.name }}">{{ field.label }}{% if field.unit %} <em>{{ field.unit }}</em>{% endif %}</label>
+                        {% if field.type == "select" %}
+                            <select id="{{ field.name }}" name="{{ field.name }}" required>
+                                {% for value, label in field.options %}
+                                <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input type="number" id="{{ field.name }}" name="{{ field.name }}" required
+                                   min="{{ field.min }}" max="{{ field.max }}" step="{{ field.step }}"
+                                   placeholder="Enter {{ field.label|lower }}">
+                        {% endif %}
+                        <small>{{ field.help }}</small>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form-card">
+            <div class="form-card-head">
+                <div class="form-number">02</div>
+                <div><h2>Cardiac indicators</h2><p>Exercise, ECG and clinical indicators</p></div>
+            </div>
+            <div class="field-group">
+                {% for field in fields %}
+                    {% if field.name == "cp" or field.name == "fbs" or field.name == "restecg" or field.name == "thalach" or field.name == "exang" or field.name == "oldpeak" %}
+                    <div class="field">
+                        <label for="{{ field.name }}">{{ field.label }}{% if field.unit %} <em>{{ field.unit }}</em>{% endif %}</label>
+                        {% if field.type == "select" %}
+                            <select id="{{ field.name }}" name="{{ field.name }}" required>
+                                {% for value, label in field.options %}
+                                <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input type="number" id="{{ field.name }}" name="{{ field.name }}" required
+                                   min="{{ field.min }}" max="{{ field.max }}" step="{{ field.step }}"
+                                   placeholder="Enter {{ field.label|lower }}">
+                        {% endif %}
+                        <small>{{ field.help }}</small>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="form-card">
+            <div class="form-card-head">
+                <div class="form-number">03</div>
+                <div><h2>Exercise & vessel indicators</h2><p>Final categorical features in the model input</p></div>
+            </div>
+            <div class="field-group">
+                {% for field in fields %}
+                    {% if field.name == "slope" or field.name == "ca" or field.name == "thal" %}
+                    <div class="field">
+                        <label for="{{ field.name }}">{{ field.label }}{% if field.unit %} <em>{{ field.unit }}</em>{% endif %}</label>
+                        <select id="{{ field.name }}" name="{{ field.name }}" required>
+                            {% for value, label in field.options %}
+                            <option value="{{ value }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        <small>{{ field.help }}</small>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="submit-panel">
+            <div>
+                <strong>Ready to evaluate?</strong>
+                <span>Your inputs will be processed locally by the trained model.</span>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Generate prediction <span aria-hidden="true">→</span>
+            </button>
+        </div>
+    </form>
+</section>
+{% endblock %}

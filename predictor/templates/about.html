@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}CardioVeyra · Model & Analytics{% endblock %}
+{% block content %}
+<section class="about-section">
+    <div class="about-head">
+        <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> CARDIOVEYRA · MODEL INSIGHT</div>
+            <h1>Inside the prediction framework</h1>
+            <p>The model page connects the live application to the methodology and evaluation evidence described in the supplied project report.</p>
+        </div>
+    </div>
+
+    <div class="model-overview">
+        <div class="model-overview-main">
+            <span class="eyebrow">FINAL CLASSIFIER</span>
+            <h2>Random Forest</h2>
+            <p>100 estimators · binary classification · serialized with Joblib</p>
+        </div>
+        <div class="model-score"><span>TEST ACCURACY</span><strong>83.52%</strong><small>76 / 91 test records</small></div>
+    </div>
+
+    <div class="metric-table-wrap">
+        <div class="panel-heading"><h3>Model comparison</h3><span>Test-set metrics</span></div>
+        <pre class="metrics-table">{{ metrics_text }}</pre>
+    </div>
+
+    <div class="analytics-heading">
+        <div><span class="eyebrow">VISUAL ANALYTICS</span><h2>Evidence from the trained models</h2></div>
+        <p>These charts are generated from the supplied dataset and report-aligned training setup.</p>
+    </div>
+
+    <div class="chart-grid">
+        <figure class="chart-card chart-wide">
+            <img src="{% static 'charts/model_accuracies.png' %}" alt="Model accuracy comparison">
+            <figcaption>Accuracy comparison across the evaluated classifiers.</figcaption>
+        </figure>
+        <figure class="chart-card">
+            <img src="{% static 'charts/feature_importance.png' %}" alt="Random Forest feature importance">
+            <figcaption>Random Forest feature importance.</figcaption>
+        </figure>
+        <figure class="chart-card">
+            <img src="{% static 'charts/correlation_heatmap.png' %}" alt="Correlation heatmap">
+            <figcaption>Feature correlation heatmap.</figcaption>
+        </figure>
+    </div>
+
+    <div class="note-card">
+        <div class="shield">!</div>
+        <div>
+            <strong>Report consistency note</strong>
+            <p>The supplied report contains conflicting accuracy statements. Its Random Forest confusion matrix is 33/11 and 4/43, which corresponds to 76/91 = 83.52%. CardioVeyra displays that reproducible value rather than the conflicting 0.89 prose figure.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

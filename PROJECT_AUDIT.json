@@ -1,0 +1,114 @@
+{
+  "dataset_shape": [
+    303,
+    14
+  ],
+  "columns": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal",
+    "target"
+  ],
+  "missing_values": 0,
+  "results": [
+    {
+      "model": "KNN",
+      "accuracy": 0.6703296703296703,
+      "precision": 0.6666666666666666,
+      "recall": 0.723404255319149,
+      "f1": 0.6938775510204082
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.8351648351648352,
+      "precision": 0.7962962962962963,
+      "recall": 0.9148936170212766,
+      "f1": 0.8514851485148515
+    },
+    {
+      "model": "Naive Bayes",
+      "accuracy": 0.8021978021978022,
+      "precision": 0.7735849056603774,
+      "recall": 0.8723404255319149,
+      "f1": 0.82
+    },
+    {
+      "model": "SVM",
+      "accuracy": 0.8131868131868132,
+      "precision": 0.7777777777777778,
+      "recall": 0.8936170212765957,
+      "f1": 0.8316831683168316
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.7472527472527473,
+      "precision": 0.7608695652173914,
+      "recall": 0.7446808510638298,
+      "f1": 0.7526881720430108
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.8351648351648352,
+      "precision": 0.7962962962962963,
+      "recall": 0.9148936170212766,
+      "f1": 0.8514851485148515
+    }
+  ],
+  "rf_confusion_matrix": [
+    [
+      33,
+      11
+    ],
+    [
+      4,
+      43
+    ]
+  ],
+  "files": [
+    "README.md",
+    "data/heart.csv",
+    "heart_prediction/__init__.py",
+    "heart_prediction/settings.py",
+    "heart_prediction/urls.py",
+    "heart_prediction/wsgi.py",
+    "manage.py",
+    "models/best_heart_model.pkl",
+    "models/heartrf.joblib",
+    "models/metrics.csv",
+    "models/metrics.txt",
+    "models/selected_features.pkl",
+    "models/test_split.npz",
+    "predictor/__init__.py",
+    "predictor/apps.py",
+    "predictor/management/__init__.py",
+    "predictor/management/commands/__init__.py",
+    "predictor/templates/about.html",
+    "predictor/templates/base.html",
+    "predictor/templates/index.html",
+    "predictor/templates/predict.html",
+    "predictor/templates/result.html",
+    "predictor/views.py",
+    "requirements.txt",
+    "static/charts/confusion_decision_tree.png",
+    "static/charts/confusion_knn.png",
+    "static/charts/confusion_logistic_regression.png",
+    "static/charts/confusion_naive_bayes.png",
+    "static/charts/confusion_random_forest.png",
+    "static/charts/confusion_svm.png",
+    "static/charts/correlation_heatmap.png",
+    "static/charts/feature_importance.png",
+    "static/charts/model_accuracies.png",
+    "static/css/style.css",
+    "train_model.py"
+  ]
+}

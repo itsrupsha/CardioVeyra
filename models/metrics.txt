@@ -1,0 +1,21 @@
+CARDIOVEYRA
+An Intelligent Machine Learning Framework for Heart Disease Prediction
+=================================================================
+
+Dataset: UCI Heart Disease (Cleveland), 303 rows
+Features: 13
+Split: 80% training / 20% testing
+random_state: 0
+KNN neighbors: 7
+Random Forest estimators: 100
+
+MODEL RESULTS
+-----------------------------------------------------------------
+KNN                   Accuracy=0.6721  Precision=0.7188  Recall=0.6765  F1=0.6970
+Logistic Regression   Accuracy=0.8525  Precision=0.8378  Recall=0.9118  F1=0.8732
+Naive Bayes           Accuracy=0.8525  Precision=0.8378  Recall=0.9118  F1=0.8732
+SVM                   Accuracy=0.8197  Precision=0.8108  Recall=0.8824  F1=0.8451
+Decision Tree         Accuracy=0.7869  Precision=0.8387  Recall=0.7647  F1=0.8000
+Random Forest         Accuracy=0.8852  Precision=0.9091  Recall=0.8824  F1=0.8955
+
+Final model: Random Forest (100 estimators)

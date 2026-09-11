@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}CardioVeyra · Intelligent Heart Disease Prediction{% endblock %}
+{% block content %}
+<section class="hero-section">
+    <div class="hero-grid">
+        <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> MACHINE LEARNING · HEART HEALTH</div>
+            <h1>CardioVeyra</h1>
+            <p class="hero-title">An Intelligent Machine Learning Framework for Heart Disease Prediction</p>
+            <p class="hero-description">
+                A focused predictive system that evaluates clinical parameters using a trained
+                Random Forest classifier and presents a clear, easy-to-understand assessment.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="{% url 'predict' %}">
+                    Start assessment
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a class="btn btn-ghost" href="{% url 'about' %}">Explore the model</a>
+            </div>
+
+            <div class="trust-row">
+                <span><i>✓</i> 13 clinical features</span>
+                <span><i>✓</i> Random Forest</span>
+                <span><i>✓</i> 303-record dataset</span>
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="heart-card">
+                <div class="card-top">
+                    <span>MODEL STATUS</span>
+                    <span class="live-pill"><b></b> READY</span>
+                </div>
+                <div class="heart-symbol">
+                    <svg viewBox="0 0 120 120">
+                        <path d="M60 100S22 77 22 48c0-15 10-26 24-26 9 0 15 4 20 12 5-8 11-12 20-12 14 0 24 11 24 26 0 29-38 52-50 52Z"/>
+                        <path class="ecg" d="M32 58h17l6-14 10 30 7-16h17"/>
+                    </svg>
+                </div>
+                <div class="model-name">Random Forest</div>
+                <div class="model-meta">100 estimators · binary classification</div>
+                <div class="mini-bars">
+                    <span style="width:92%"></span>
+                    <span style="width:76%"></span>
+                    <span style="width:84%"></span>
+                    <span style="width:68%"></span>
+                    <span style="width:88%"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">AT A GLANCE</span>
+            <h2>Built around the project report</h2>
+        </div>
+        <p>The implementation follows the dataset, model comparison and final-model choice documented in the supplied project.</p>
+    </div>
+
+    <div class="stats-grid">
+        <article class="stat-card">
+            <span class="stat-icon">01</span>
+            <strong>303</strong>
+            <span>dataset records</span>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon">02</span>
+            <strong>13</strong>
+            <span>predictor features</span>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon">03</span>
+            <strong>6</strong>
+            <span>models evaluated</span>
+        </article>
+        <article class="stat-card accent">
+            <span class="stat-icon">04</span>
+            <strong>83.52%</strong>
+            <span>Random Forest test accuracy</span>
+        </article>
+    </div>
+</section>
+
+<section class="feature-section">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h2>From patient data to prediction</h2>
+        </div>
+    </div>
+    <div class="steps-grid">
+        <article class="step-card">
+            <span>01</span>
+            <h3>Enter clinical values</h3>
+            <p>Provide the 13 attributes used by the trained model.</p>
+        </article>
+        <article class="step-card">
+            <span>02</span>
+            <h3>Model evaluation</h3>
+            <p>CardioVeyra passes the values to the serialized Random Forest model.</p>
+        </article>
+        <article class="step-card">
+            <span>03</span>
+            <h3>Clear result</h3>
+            <p>Receive the predicted class and model confidence in a focused result view.</p>
+        </article>
+    </div>
+</section>
+
+<section class="disclaimer-strip">
+    <div class="shield">i</div>
+    <div>
+        <strong>Important</strong>
+        <p>This project is an academic machine-learning demonstration. A prediction must not be treated as a medical diagnosis or a substitute for professional care.</p>
+    </div>
+</section>
+{% endblock %}
