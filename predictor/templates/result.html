@@ -21,25 +21,30 @@
             {% endif %}
         </div>
         <div class="result-content">
-            <span class="result-label">{% if risk_level == "high" %}PREDICTION INDICATED{% else %}PREDICTION RESULT{% endif %}</span>
+            <span class="result-label">{% if risk_level == "high" %}PREDICTION INDICATED{% else %}PREDICTION RESULT{%
+                endif %}</span>
             <h2>{{ result_label }}</h2>
             <p>
                 {% if risk_level == "high" %}
-                The model classified this input as class 1. Please treat this result as an academic prediction and seek professional medical advice for any health concern.
+                The model classified this input as class 1. Please treat this result as an academic prediction and seek
+                professional medical advice for any health concern.
                 {% else %}
-                The model classified this input as class 0. This academic prediction does not rule out a medical condition.
+                The model classified this input as class 0. This academic prediction does not rule out a medical
+                condition.
                 {% endif %}
             </p>
         </div>
         <div class="confidence-box">
-            <span>MODEL CONFIDENCE</span>
+            <span>MODEL PROBABILITY</span>
             <strong>{{ confidence }}%</strong>
         </div>
     </div>
 
     <div class="result-grid">
         <div class="result-panel">
-            <div class="panel-heading"><h3>Submitted profile</h3><span>13 features</span></div>
+            <div class="panel-heading">
+                <h3>Submitted profile</h3><span>13 features</span>
+            </div>
             <div class="profile-list">
                 {% for field in fields %}
                 <div>
@@ -53,7 +58,8 @@
         <div class="result-panel next-panel">
             <span class="eyebrow">NEXT STEP</span>
             <h3>Use this result responsibly</h3>
-            <p>CardioVeyra is designed for academic demonstration and risk-classification research. It is not a certified diagnostic tool.</p>
+            <p>CardioVeyra is designed for academic demonstration and risk-classification research. It is not a
+                certified diagnostic tool.</p>
             <a href="{% url 'predict' %}" class="btn btn-secondary">Run another assessment</a>
         </div>
     </div>
@@ -62,7 +68,8 @@
         <div class="shield">i</div>
         <div>
             <strong>Medical disclaimer</strong>
-            <p>This prediction is not a diagnosis, treatment recommendation, or emergency assessment. Consult a qualified healthcare professional for medical decisions.</p>
+            <p>This prediction is not a diagnosis, treatment recommendation, or emergency assessment. Consult a
+                qualified healthcare professional for medical decisions.</p>
         </div>
     </div>
 </section>
