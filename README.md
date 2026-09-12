@@ -512,7 +512,26 @@ Repository:
 ```text
 itsrupsha/CardioVeyra
 ```
+---
 
+## Copyright & Usage
+
+**Copyright © 2026 Rupsha Das — All Rights Reserved**
+
+CardioVeyra is provided publicly for educational, demonstration, and portfolio
+viewing purposes.
+
+You may view and study the project for personal and educational purposes.
+However, copying, modifying, redistributing, republishing, or using substantial
+portions of this project without prior written permission from the author is
+not permitted.
+
+If you reference or use substantial portions of the project with permission,
+please provide clear attribution to:
+
+**Rupsha Das — CardioVeyra**
+
+See the [`LICENSE`](LICENSE) file for the complete terms.
 ---
 
 ## Disclaimer
