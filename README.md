@@ -1,188 +1,133 @@
-CardioVeyra
+# CardioVeyra
 
-An Intelligent Machine Learning Framework for Heart Disease Prediction
+## An Intelligent Machine Learning Framework for Heart Disease Prediction
 
 CardioVeyra is a machine learning and web-based application developed for predicting the likelihood of heart disease using clinical patient parameters.
 
 The project combines machine learning algorithms with a Django web interface to provide a simple and user-friendly heart disease prediction system.
 
-Academic Project: CardioVeyra is intended for educational and portfolio purposes and is not a certified medical diagnostic system.
+> **Academic Project:** CardioVeyra is intended for educational and portfolio purposes and is not a certified medical diagnostic system.
 
-Project Overview
+---
+
+## Project Overview
 
 Heart disease is one of the major health challenges worldwide. Early identification of potential risk can support further medical evaluation.
 
 CardioVeyra applies supervised machine learning algorithms to clinical data and predicts whether a patient falls into one of two classes:
 
-0 — No heart disease indicated
+- **0 — No heart disease indicated**
+- **1 — Heart disease indicated**
 
-1 — Heart disease indicated
+The project uses the UCI Cleveland Heart Disease dataset containing **303 patient records** and **13 predictor features**.
 
-The project uses the UCI Cleveland Heart Disease dataset containing 303 patient records and 13 predictor features.
+The final web application uses a **Random Forest classifier** for prediction.
 
-The final web application uses a Random Forest classifier for prediction.
+---
 
-Objectives
+## Objectives
 
 The main objectives of CardioVeyra are:
 
-Build a machine learning system for heart disease prediction.
+- Build a machine learning system for heart disease prediction.
+- Compare multiple supervised machine learning algorithms.
+- Train and evaluate classification models.
+- Select a suitable final prediction model.
+- Develop a Django-based web application.
+- Provide a simple clinical parameter input form.
+- Display the prediction and model probability.
+- Visualize model performance and feature importance.
+- Provide Dark Mode and Light Mode support.
+- Create a reproducible academic machine learning project.
 
-Compare multiple supervised machine learning algorithms.
+---
 
-Train and evaluate classification models.
+## Dataset
 
-Select a suitable final prediction model.
+The project uses the **UCI Cleveland Heart Disease dataset**.
 
-Develop a Django-based web application.
+### Dataset Information
 
-Provide a simple clinical parameter input form.
+| Property | Value |
+|---|---|
+| Dataset | UCI Cleveland Heart Disease |
+| Records | 303 |
+| Predictor Features | 13 |
+| Target Variable | `target` |
+| Classification | Binary |
+| Final Model | Random Forest |
 
-Display the prediction and model probability.
-
-Visualize model performance and feature importance.
-
-Provide Dark Mode and Light Mode support.
-
-Create a reproducible academic machine learning project.
-
-Dataset
-
-The project uses the UCI Cleveland Heart Disease dataset.
-
-Dataset Information
-
-Property
-
-Value
-
-Dataset
-
-UCI Cleveland Heart Disease
-
-Records
-
-303
-
-Predictor Features
-
-13
-
-Target Variable
-
-target
-
-Classification
-
-Binary
-
-Final Model
-
-Random Forest
-
-Features
+### Features
 
 The model uses the following 13 clinical parameters:
 
-Feature
+| Feature | Description |
+|---|---|
+| `age` | Age of the patient |
+| `sex` | Sex of the patient |
+| `cp` | Chest pain type |
+| `trestbps` | Resting blood pressure |
+| `chol` | Serum cholesterol |
+| `fbs` | Fasting blood sugar |
+| `restecg` | Resting electrocardiographic results |
+| `thalach` | Maximum heart rate achieved |
+| `exang` | Exercise-induced angina |
+| `oldpeak` | ST depression induced by exercise |
+| `slope` | Slope of the peak exercise ST segment |
+| `ca` | Number of major vessels |
+| `thal` | Thalassemia-related categorical value |
 
-Description
-
-age
-
-Age of the patient
-
-sex
-
-Sex of the patient
-
-cp
-
-Chest pain type
-
-trestbps
-
-Resting blood pressure
-
-chol
-
-Serum cholesterol
-
-fbs
-
-Fasting blood sugar
-
-restecg
-
-Resting electrocardiographic results
-
-thalach
-
-Maximum heart rate achieved
-
-exang
-
-Exercise-induced angina
-
-oldpeak
-
-ST depression induced by exercise
-
-slope
-
-Slope of the peak exercise ST segment
-
-ca
-
-Number of major vessels
-
-thal
-
-Thalassemia-related categorical value
-
-Target
+### Target
 
 The target variable is binary:
 
+```text
 0 = No heart disease indicated
 1 = Heart disease indicated
+```
 
-Machine Learning Methodology
+---
+
+## Machine Learning Methodology
 
 The project compares the following machine learning algorithms:
 
-K-Nearest Neighbors (KNN)
+1. K-Nearest Neighbors (KNN)
+2. Logistic Regression
+3. Gaussian Naive Bayes
+4. Support Vector Machine (SVM)
+5. Decision Tree
+6. Random Forest
 
-Logistic Regression
-
-Gaussian Naive Bayes
-
-Support Vector Machine (SVM)
-
-Decision Tree
-
-Random Forest
-
-Training Configuration
+### Training Configuration
 
 The final training methodology uses:
 
+```text
 Train/Test Split: 80% / 20%
 Random State: 0
 KNN Neighbors: 7
 SVM Kernel: Linear
 Random Forest Estimators: 100
+```
 
 The final application model is:
 
+```text
 Random Forest Classifier
+```
 
 The trained Random Forest model is saved as:
 
+```text
 models/heartrf.joblib
+```
 
-Application Workflow
+---
 
+## Application Workflow
+
+```text
 User
  │
  ▼
@@ -206,16 +151,19 @@ Binary Prediction
  │
  ▼
 Predicted Model Probability
+```
 
-Web Application
+---
+
+## Web Application
 
 CardioVeyra provides a Django-based web interface with the following major sections.
 
-Home
+### Home
 
 The home page introduces CardioVeyra and provides navigation to the prediction and model information sections.
 
-Heart Disease Assessment
+### Heart Disease Assessment
 
 Users can enter the required 13 clinical parameters through the assessment form.
 
@@ -223,96 +171,87 @@ The application validates the input and sends the values to the trained machine 
 
 The result page displays:
 
-Prediction result
+- Prediction result
+- Predicted class
+- Model probability
+- Interpretation of the prediction
 
-Predicted class
-
-Model probability
-
-Interpretation of the prediction
-
-Model Information
+### Model Information
 
 The application also provides machine learning visualizations and information, including:
 
-Model comparison
+- Model comparison
+- Feature importance
+- Correlation heatmap
+- Classification evaluation
+- Confusion matrices
+- Model-related visualizations
 
-Feature importance
+---
 
-Correlation heatmap
+## Screenshots
 
-Classification evaluation
+### Home Page
 
-Confusion matrices
+![CardioVeyra Home Page](screenshots/home.png)
 
-Model-related visualizations
+### Heart Disease Assessment
 
-Screenshots
+![Heart Disease Assessment](screenshots/assessment.png)
 
-Home Page
+### Prediction Result
 
+![Prediction Result](screenshots/prediction.png)
 
+### Model Analytics
 
-Heart Disease Assessment
+![Model Analytics](screenshots/model.png)
 
+---
 
+## Technology Stack
 
-Prediction Result
+### Programming Language
 
+- Python
 
+### Machine Learning
 
-Model Analytics
+- Scikit-learn
+- NumPy
+- Pandas
+- Joblib
 
+### Web Framework
 
+- Django
 
-Technology Stack
+### Data Visualization
 
-Programming Language
+- Matplotlib
+- Seaborn
 
-Python
+### Frontend
 
-Machine Learning
+- HTML
+- CSS
+- JavaScript
 
-Scikit-learn
+### Database
 
-NumPy
+- SQLite
 
-Pandas
+### Development Tools
 
-Joblib
+- Git
+- GitHub
+- Python Virtual Environment
 
-Web Framework
+---
 
-Django
+## Project Structure
 
-Data Visualization
-
-Matplotlib
-
-Seaborn
-
-Frontend
-
-HTML
-
-CSS
-
-JavaScript
-
-Database
-
-SQLite
-
-Development Tools
-
-Git
-
-GitHub
-
-Python Virtual Environment
-
-Project Structure
-
+```text
 CardioVeyra/
 │
 ├── data/
@@ -349,108 +288,125 @@ CardioVeyra/
 ├── README.md
 ├── PROJECT_AUDIT.json
 └── PROJECT_MANIFEST.json
+```
 
-Installation
+---
 
-1. Clone the Repository
+## Installation
 
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/itsrupsha/CardioVeyra.git
+```
 
 Move into the project directory:
 
+```bash
 cd CardioVeyra
+```
 
-2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 
 On Windows:
 
+```bash
 python -m venv venv
+```
 
 Activate the virtual environment:
 
+```bash
 venv\Scripts\activate
+```
 
-3. Install Dependencies
+### 3. Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Train the Machine Learning Models
+### 4. Train the Machine Learning Models
 
 Run:
 
+```bash
 python train_model.py
+```
 
 This trains the machine learning models and generates the required model artifacts and evaluation outputs.
 
-5. Start the Django Server
+### 5. Start the Django Server
 
 Run:
 
+```bash
 python manage.py runserver
+```
 
 Open the application in your browser:
 
+```text
 http://127.0.0.1:8000/
+```
 
-Running the Application
+---
+
+## Running the Application
 
 After starting the Django development server:
 
-Open the CardioVeyra home page.
+1. Open the CardioVeyra home page.
+2. Navigate to the assessment page.
+3. Enter the 13 required clinical parameters.
+4. Submit the assessment.
+5. The trained Random Forest model processes the input.
+6. The application displays the predicted class and model probability.
+7. Visit the model section to view the machine learning visualizations.
 
-Navigate to the assessment page.
+---
 
-Enter the 13 required clinical parameters.
-
-Submit the assessment.
-
-The trained Random Forest model processes the input.
-
-The application displays the predicted class and model probability.
-
-Visit the model section to view the machine learning visualizations.
-
-Theme Support
+## Theme Support
 
 CardioVeyra includes a Dark Mode and Light Mode interface.
 
 Users can switch between:
 
+```text
 Dark Mode
 Light Mode
+```
 
 The selected theme is stored in browser local storage so that the preference can be retained.
 
-Model Evaluation
+---
+
+## Model Evaluation
 
 The project evaluates the machine learning models using classification metrics and visualizations.
 
 The evaluation includes:
 
-Accuracy
-
-Precision
-
-Recall
-
-F1-score
-
-Confusion Matrix
-
-Model Comparison
-
-Feature Importance
-
-Correlation Analysis
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+- Model Comparison
+- Feature Importance
+- Correlation Analysis
 
 The project stores generated evaluation outputs alongside the machine learning artifacts.
 
-Accuracy values should be taken directly from the final generated evaluation files rather than manually assumed.
+> Accuracy values should be taken directly from the final generated evaluation files rather than manually assumed.
 
-Important Machine Learning Details
+---
+
+## Important Machine Learning Details
 
 The final project follows the following configuration:
 
+```text
 Dataset Records       : 303
 Predictor Features    : 13
 Target Classes        : 2
@@ -462,140 +418,129 @@ SVM Kernel             : Linear
 Random Forest Trees    : 100
 
 Final Application      : Random Forest
+```
 
-Limitations
+---
+
+## Limitations
 
 The project has several limitations:
 
-The dataset contains only 303 records.
+- The dataset contains only 303 records.
+- The dataset is static and does not represent real-time patient data.
+- Machine learning predictions may contain false positives or false negatives.
+- The system is designed for binary classification.
+- The prediction model has not been clinically certified.
+- The application should not replace professional medical examination.
+- Real-world clinical deployment would require larger datasets, validation, security, privacy controls, and medical approval.
 
-The dataset is static and does not represent real-time patient data.
+---
 
-Machine learning predictions may contain false positives or false negatives.
-
-The system is designed for binary classification.
-
-The prediction model has not been clinically certified.
-
-The application should not replace professional medical examination.
-
-Real-world clinical deployment would require larger datasets, validation, security, privacy controls, and medical approval.
-
-Future Scope
+## Future Scope
 
 Possible future improvements include:
 
-Larger and more diverse medical datasets.
+- Larger and more diverse medical datasets.
+- Additional machine learning and deep learning models.
+- Hyperparameter optimization.
+- Cross-validation and more extensive model validation.
+- Explainable AI techniques such as SHAP.
+- Real-time monitoring integration.
+- Secure patient data management.
+- User authentication and authorization.
+- Deployment to a cloud platform.
+- REST API integration.
+- Improved accessibility and responsive design.
+- Clinical validation with appropriate medical professionals.
 
-Additional machine learning and deep learning models.
+---
 
-Hyperparameter optimization.
-
-Cross-validation and more extensive model validation.
-
-Explainable AI techniques such as SHAP.
-
-Real-time monitoring integration.
-
-Secure patient data management.
-
-User authentication and authorization.
-
-Deployment to a cloud platform.
-
-REST API integration.
-
-Improved accessibility and responsive design.
-
-Clinical validation with appropriate medical professionals.
-
-Documentation
+## Documentation
 
 Complete project documentation is included with the project package.
 
 Available documentation:
 
+```text
 CardioVeyra_Project_Documentation.docx
 CardioVeyra_Project_Documentation.pdf
+```
 
 The documentation covers:
 
-Project introduction
+- Project introduction
+- Problem statement
+- Objectives
+- Dataset
+- Data preprocessing
+- Exploratory data analysis
+- Machine learning algorithms
+- Model evaluation
+- Feature importance
+- Web application
+- Results
+- Limitations
+- Future scope
+- Conclusion
 
-Problem statement
+---
 
-Objectives
-
-Dataset
-
-Data preprocessing
-
-Exploratory data analysis
-
-Machine learning algorithms
-
-Model evaluation
-
-Feature importance
-
-Web application
-
-Results
-
-Limitations
-
-Future scope
-
-Conclusion
-
-Reproducibility
+## Reproducibility
 
 To reproduce the project:
 
+```bash
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 python train_model.py
 python manage.py runserver
+```
 
-The training configuration is explicitly defined in train_model.py.
+The training configuration is explicitly defined in `train_model.py`.
 
-GitHub
+---
+
+## GitHub
 
 Project repository:
 
-CardioVeyra — An Intelligent Machine Learning Framework for Heart Disease Prediction
+**CardioVeyra — An Intelligent Machine Learning Framework for Heart Disease Prediction**
 
 Repository:
 
+```text
 itsrupsha/CardioVeyra
+```
 
-Disclaimer
+---
 
-CardioVeyra is an academic machine learning project developed for educational, demonstration, and portfolio purposes.
+## Disclaimer
+
+CardioVeyra is an **academic machine learning project** developed for educational, demonstration, and portfolio purposes.
 
 The predictions generated by this application are not medical diagnoses and should not be used as a substitute for professional medical advice, examination, or treatment.
 
 Users should consult qualified healthcare professionals for medical decisions.
 
-Author
+---
 
-Rupsha Das
+## Author
+
+**Rupsha Das**
 
 Areas of interest:
 
-Machine Learning
+- Machine Learning
+- Python
+- Django
+- Cybersecurity
+- Software Development
 
-Python
+---
 
-Django
+## Project Status
 
-Cybersecurity
-
-Software Development
-
-Project Status
-
-Completed Academic / Portfolio Project
+**Completed Academic / Portfolio Project**
 
 CardioVeyra demonstrates the integration of machine learning, data analysis, model evaluation, and Django web development into a complete end-to-end application.
