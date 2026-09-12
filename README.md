@@ -165,6 +165,15 @@ Correlation heatmap
 Classification evaluation
 Confusion matrices
 Model-related visualizations
+Screenshots
+Home Page
+
+Heart Disease Assessment
+
+Prediction Result
+
+Model Analytics
+
 Technology Stack
 Programming Language
 Python
@@ -208,6 +217,12 @@ CardioVeyra/
 │
 ├── predictor/
 │   └── ...
+│
+├── screenshots/
+│   ├── home.png
+│   ├── assessment.png
+│   ├── prediction.png
+│   └── model.png
 │
 ├── static/
 │   ├── css/
@@ -382,7 +397,7 @@ CardioVeyra — An Intelligent Machine Learning Framework for Heart Disease Pred
 
 Repository:
 
-https://github.com/itsrupsha/CardioVeyra
+itsrupsha/CardioVeyra
 Disclaimer
 
 CardioVeyra is an academic machine learning project developed for educational, demonstration, and portfolio purposes.
@@ -402,8 +417,8 @@ Python
 Django
 Cybersecurity
 Software Development
-
 Project Status
+
 Completed Academic / Portfolio Project
 
 CardioVeyra demonstrates the integration of machine learning, data analysis, model evaluation, and Django web development into a complete end-to-end application.
